@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <style>
+    <meta charset="utf-8"><meta name="viewport" content="width=device-width"><title>JS Bin</title>
+  </style>
+</head>
+
+<body>
+  <img id="image" src="https://static.wikia.nocookie.net/dragonball/images/b/ba/Goku_anime_profile.png/revision/latest?cb=20240723150655">
+    <h1 id="scor"> score= 0 </h1>
+  <script>
+    document.getElementById("image").addEventListener("click", up)
+    var score = 0
+
+    console.log(score)
+    function up() {
+      score = score + 1
+      document.getElementById("scor").innerHTML = score
+      console.log(score)
+    }
+
+  </script>
+
+</body>
+
+</html>
