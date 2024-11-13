@@ -2,27 +2,61 @@
 <html>
 
 <head>
+
+  <meta name="viewport" content="width=device-width">
+  <title>Son Sonic Clicker</title>
+  </meta>
   <style>
-    <meta charset="utf-8"><meta name="viewport" content="width=device-width"><title>JS Bin</title>
+    img{
+      width: 300px;
+    }
   </style>
 </head>
 
 <body>
-  <img id="image" src="https://static.wikia.nocookie.net/dragonball/images/b/ba/Goku_anime_profile.png/revision/latest?cb=20240723150655">
-    <h1 id="scor"> score= 0 </h1>
-  <script>
-    document.getElementById("image").addEventListener("click", up)
-    var score = 0
-
-    console.log(score)
-    function up() {
-      score = score + 1
-      document.getElementById("scor").innerHTML = score
-      console.log(score)
-    }
-
-  </script>
+  <img id="image"
+    src="https://static.wikia.nocookie.net/continued-exe/images/4/45/Sonic.Goku_%28BASE_FORM%29.png/revision/latest?cb=20240110022306">
+  <h1 id="scor"> score= 0 </h1>
+  <button id="but">Upgrade cost : 25</button>
+  
 
 </body>
 
-</html>
+</html><script>
+  document.getElementById("image").addEventListener("click", up)
+  var score = 0
+
+  console.log(score)
+  function up() {
+    score = score + level
+    document.getElementById("scor").innerHTML = score
+    console.log(score)
+  }
+  var mymoney = 10
+  var price = 5
+  var hasSoda = true
+  if (mymoney >= price) {
+    mymoney = mymoney - price
+    hasSoda = true
+  }
+
+
+  var level = 1
+  var cost = 25
+  function upgrade() {
+    if (score >= cost) {
+      level = level + 1
+      score = score - cost
+      cost = cost * 2
+      document.getElementById("scor").innerHTML = score
+      document.getElementById("but").innerHTML = "Upgrade cost : " + cost
+    }
+    else {
+      alert("no")
+    }
+
+  }
+  document.getElementById("but").addEventListener("click", upgrade)
+
+
+</script>
