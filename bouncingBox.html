@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>
+Bouncing Box
+  </title>
+  <style>
+    div{
+width: 30px;
+height: 30px;
+background-color:red;
+position: absolute;
+top: 100px; 
+left:100px;
+
+    }
+ </style>
+</head>
+<body>
+  
+  
+  <div id = "box">
+    </div>
+</body>
+<script>
+document.getElementById("box").addEventListener("click",moveBox)
+var position = 100
+var direction = 5
+function moveBox() {
+  //increase box position
+  
+  document.getElementById("box").style.left = 100 + position + "px"
+  position = position + direction;
+  if(position >= 300){
+    direction = -5
+  }
+  if(position <= 10){direction = 5}
+}
+
+document.getElementById("box").addEventListener("click",moveUp)
+var position = 100
+var direction = 5
+function moveUp() {
+  //increase box position
+  
+  document.getElementById("box").style.top = 100 + position + "px"
+  position = position + direction;
+  if(position >= 300){
+    direction = -5
+  }
+  if(position <= 10){direction = 5}
+}
+setInterval(moveBox,16)
+setInterval(moveUp,16)
+var speed = 5
+
+document.getElementById("box").addEventListener("click",SpeedUp)
+function SpeedUp(){
+  //increase box speed
+
+  document.getElementById("box").script.speed = speed + 5
+}
+</script>
+
+</html>
